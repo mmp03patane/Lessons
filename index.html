@@ -1,1 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative365 - DIY Lead Generation Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --dark-text: #333;
+            --light-text: #f8f9fa;
+            --bg-light: #f8f9fa;
+            --bg-dark: #343a40;
+            --border-color: #dee2e6;
+        }
 
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .alert-banner {
+            background-color: #ffc107;
+            color: #333;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro, .course-details, .what-you-need, .instructor, .roi-calculator-section, .cta-section {
+            background-color: #fff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .intro strong, .course-details strong {
+            color: var(--primary-color);
+        }
+
+        .course-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .course-details ul li {
+            background-color: var(--bg-light);
+            padding: 15px;
+            border-left: 5px solid var(--secondary-color);
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .what-you-need ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .what-you-need .highlight {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .instructor img {
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 15px auto;
+            border: 3px solid var(--primary-color);
+        }
+
+        .instructor p {
+            text-align: center;
+        }
+
+        .roi-calculator-section .calculator-inputs,
+        .roi-calculator-section .calculator-results {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .roi-calculator-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .roi-calculator-section input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .roi-calculator-section button {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .roi-calculator-section button:hover {
+            background-color: #218838;
+        }
+
+        .roi-calculator-section .results p {
+            font-size: 1.1em;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: var(--bg-light);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .cta-section {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .cta-section h2 {
+            color: var(--light-text);
+        }
+
+        .cta-section .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .cta-section .cta-buttons a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 80%; /* Adjust for better mobile responsiveness */
+            max-width: 350px;
+        }
+
+        .cta-section .cta-buttons a:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--dark-text);
+            color: var(--light-text);
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 768px) {
+            .roi-calculator-section .calculator-inputs {
+                grid-template-columns: 1fr 1fr;
+            }
+            .course-details ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cta-section .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="alert-banner">
+                🚨 ATTN SMALL BUSINESS OWNERS 🚨
+            </div>
+            <h1>Unlock Unlimited Leads: Your DIY Digital Marketing Power-Up!</h1>
+            <p>Tired of relying on expensive agencies? Learn to generate your own high-quality leads with our intensive, hands-on Facebook & Google Ads course.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Stop Giving Away Your Marketing Budget!</h2>
+            <p>"Give a man a fish, and you feed him for a day. Teach a man to fish, and you feed him for a lifetime."</p>
+            <p>Hey everybody, it's Michael from Creative365. I'm running a **DIY Lead Generation Course** designed to put the power of digital advertising directly into your hands. This isn't just theory; it's a **full-on empowerment and independence** program to help you generate as many leads and make as much money as you want, without relying on an agency or a so-called "marketing expert".</p>
+            <p>This <strong>6-hour, intensive course</strong> can be completed in just one day, delivered **1:1 online**, ensuring personalized attention and real-time guidance.</p>
+        </section>
+
+        <hr>
+
+        <section class="course-details">
+            <h2>Course Structure: What You'll Master in 6 Hours</h2>
+            <p>We've packed everything from A to Z into this powerful one-day session. Here's a breakdown of what you'll achieve:</p>
+            <ul>
+                <li><strong>Module 1: Creative Powerhouse</strong><br>How to build stunning ad creatives for FREE using Canva.</li>
+                <li><strong>Module 2: Landing Page Mastery</strong><br>Design and optimize high-converting landing pages that capture leads.</li>
+                <li><strong>Module 3: Lead Delivery & Management</strong><br>Set up systems to effectively receive and manage your new leads.</li>
+                <li><strong>Module 4: Converting Content & Copy</strong><br>Craft compelling ad copy and content that turns clicks into customers.</li>
+                <li><strong>Module 5: Facebook (Meta) Ads Campaign</strong><br>Step-by-step guide to building and launching a profitable Facebook Ads campaign.</li>
+                <li><strong>Module 6: Google Ads Campaign</strong><br>Learn to create and optimize powerful Google Ads campaigns for search dominance.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="what-you-need">
+            <h2>What You Need & What We'll Build</h2>
+            <p>This is an **interactive, hands-on experience**, not just a passive video course. To get the most out of it, you'll need:</p>
+            <ul>
+                <li>A computer with a webcam and microphone.</li>
+                <li>A willingness to learn and apply!</li>
+            </ul>
+            <p>By the end of the day, you'll have actually **built and launched**:</p>
+            <ol>
+                <li class="highlight">A high-converting landing page.</li>
+                <li class="highlight">Engaging ad creatives.</li>
+                <li class="highlight">A live Facebook (Meta) Ads campaign.</li>
+                <li class="highlight">A live Google Ads campaign.</li>
+            </ol>
+            <p>Plus, you get to **keep all the content, notes, and resources** we create from the day to refer back to anytime.</p>
+        </section>
+
+        <hr>
+
+        <section class="instructor">
+            <h2>Meet Your Instructor: Michael from Creative365</h2>
+            <img src="https://via.placeholder.com/150" alt="Michael from Creative365 (replace with actual photo)">
+            <p>I'm Michael, the founder of Creative365. My mission is to empower small business owners like you to take control of your marketing and achieve true independence. With years of experience in digital marketing, I've seen firsthand the power of well-executed ad campaigns and I'm passionate about sharing that knowledge directly with you.</p>
+            <p>Learn more about Creative365: <a href="https://www.creative365.info" target="_blank">creative365.info</a> | <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn Profile</a> (Please update this link with your actual LinkedIn profile)</p>
+        </section>
+
+        <hr>
+
+        <section class="roi-calculator-section">
+            <h2>ROI Calculator: See Your Potential Returns!</h2>
+            <p>Invest in yourself and see how quickly you can make back the $1,000 course fee. This calculator will give you an estimate of your return on investment based on your business metrics.</p>
+            <div class="calculator-inputs">
+                <div>
+                    <label for="monthlyRevenue">Current Monthly Revenue ($):</label>
+                    <input type="number" id="monthlyRevenue" placeholder="e.g., 5000" min="0">
+                </div>
+                <div>
+                    <label for="customerValue">Average Customer Lifetime Value ($):</label>
+                    <input type="number" id="customerValue" placeholder="e.g., 200" min="0">
+                </div>
+                <div>
+                    <label for="conversionRateIncrease">Expected Lead Conversion Rate Increase (%):</label>
+                    <input type="number" id="conversionRateIncrease" placeholder="e.g., 5" min="0" max="100">
+                    <small> (e.g., 5% if you expect a 5% increase in leads converting to customers due to improved ads)</small>
+                </div>
+                <div>
+                    <label for="newLeadsPerMonth">Estimated New Leads Per Month (from ads):</label>
+                    <input type="number" id="newLeadsPerMonth" placeholder="e.g., 10" min="0">
+                </div>
+            </div>
+            <button onclick="calculateROI()">Calculate Your ROI</button>
+            <div class="calculator-results" id="roiResults">
+                </div>
+        </section>
+
+        <hr>
+
+        <section class="cta-section">
+            <h2>Ready to Take Control of Your Leads?</h2>
+            <p>This 1:1, hands-on course is an investment in your business's future. Stop wasting money on ineffective strategies and start generating your own predictable flow of high-quality leads.</p>
+            <h3>Course Investment: $1,000 AUD</h3>
+            <p>Spaces are limited for this personalized training. Book a **no-obligation intro call** with me to discuss if this course is the right fit for your business.</p>
+            <div class="cta-buttons">
+                <a href="https://calendar.google.com/calendar/u/0/r?tab=rc" target="_blank">Book a Free Intro Call (Google Calendar)</a>
+                <a href="mailto:michael@creative365.info">Email Michael</a>
+                <a href="tel:+61-4XX-XXX-XXX">Call Michael (Optional - Add your number)</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Creative365. All rights reserved.</p>
+            <p><a href="https://www.creative365.info/privacy-policy" target="_blank">Privacy Policy</a> | <a href="https://www.creative365.info/terms-of-service" target="_blank">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateROI() {
+            const monthlyRevenue = parseFloat(document.getElementById('monthlyRevenue').value) || 0;
+            const customerValue = parseFloat(document.getElementById('customerValue').value) || 0;
+            const conversionRateIncrease = parseFloat(document.getElementById('conversionRateIncrease').value) || 0; // As a percentage
+            const newLeadsPerMonth = parseFloat(document.getElementById('newLeadsPerMonth').value) || 0;
+
+            const courseCost = 1000; // Fixed course cost
+
+            let roiResults = document.getElementById('roiResults');
+            roiResults.innerHTML = ''; // Clear previous results
+
+            if (customerValue <= 0 || newLeadsPerMonth <= 0) {
+                roiResults.innerHTML = '<p style="color: red;">Please enter valid numbers for Customer Lifetime Value and Estimated New Leads per month.</p>';
+                return;
+            }
+
+            // Simple calculation of new revenue from the course
+            // Assuming the new leads gained convert at a base rate, and then an additional conversion increase
+            // This is a simplified model, in reality, conversion lift might be applied differently or harder to quantify directly from leads.
+            const newCustomersFromAds = newLeadsPerMonth * (1 + (conversionRateIncrease / 100)); // Apply the expected conversion rate increase
+            const estimatedNewRevenuePerMonth = newCustomersFromAds * customerValue;
+
+            if (estimatedNewRevenuePerMonth <= 0) {
+                roiResults.innerHTML = '<p style="color: red;">The estimated new revenue per month is zero or negative. Please review your inputs.</p>';
+                return;
+            }
+
+            const monthsToRecoupCost = courseCost / estimatedNewRevenuePerMonth;
+
+            let resultHtml = `<p><strong>Based on your inputs:</strong></p>`;
+            resultHtml += `<p>With ${newLeadsPerMonth} estimated new leads per month, and an expected ${conversionRateIncrease}% increase in conversion due to improved ads, you could gain approximately <strong>${newCustomersFromAds.toFixed(1)} new customers per month</strong>.</p>`;
+            resultHtml += `<p>At an average customer value of $${customerValue.toLocaleString()}, this translates to an estimated <strong>$${estimatedNewRevenuePerMonth.toLocaleString()} in new monthly revenue</strong> generated from your ads.</p>`;
+
+            if (estimatedNewRevenuePerMonth >= courseCost) {
+                resultHtml += `<p>You could potentially recoup your $${courseCost.toLocaleString()} course investment in approximately <strong>${monthsToRecoupCost.toFixed(1)} month(s)</strong>!</p>`;
+            } else {
+                resultHtml += `<p>At an estimated $${estimatedNewRevenuePerMonth.toLocaleString()} in new monthly revenue, it would take longer than one month to recoup your $${courseCost.toLocaleString()} course investment. However, remember this is an ongoing skill that can yield results for years!</p>`;
+            }
+
+            roiResults.innerHTML = resultHtml;
+        }
+    </script>
+</body>
+</html>
